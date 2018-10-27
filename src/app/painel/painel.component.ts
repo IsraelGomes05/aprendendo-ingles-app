@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Frase} from '../shared/frase.model';
 import {FRASES} from './frases-mock';
 
@@ -10,12 +10,28 @@ import {FRASES} from './frases-mock';
 export class PainelComponent implements OnInit {
 
   public frases: Frase[] = FRASES;
+  public resposta = '';
+  public rodada = 0;
+  public rodadaFrase: Frase;
 
   constructor() {
-   console.log(this.frases);
+    this.rodadaFrase = this.frases[this.rodada];
   }
 
   ngOnInit() {
   }
 
+  public atualizaResposta(resposta: Event): void {
+    this.resposta = ((<HTMLInputElement>resposta.target).value);
+  }
+
+  public verificarResposta(): void {
+    if (this.rodadaFrase.frasePtr === this.resposta) {
+      alert('A tradução está correta');
+      this.rodada++;
+      this.rodadaFrase = this.frases[this.rodada];
+    } else {
+      alert('A tradução está incorreta');
+    }
+  }
 }
