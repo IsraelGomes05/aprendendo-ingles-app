@@ -1,5 +1,8 @@
 # APRENDENDO INGLÊS APP
 
+## Acesse o App
+http://aprendendo-ingles-dev.s3-website-sa-east-1.amazonaws.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
 
 ## Development server
