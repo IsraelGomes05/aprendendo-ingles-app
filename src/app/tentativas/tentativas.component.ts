@@ -23,7 +23,9 @@ export class TentativasComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-
+    if (this.tentativas !== this.coracoes.length) {
+      const indece = this.coracoes.length - this.tentativas;
+      this.coracoes[ indece - 1].cheio = false;
+    }
   }
-
 }
